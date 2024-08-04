@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Student Mental Health</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Your existing styles... */
+.center {
+  padding: 8px 13px;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: rgb(21, 19, 138);
+  border: none;
+  border-radius: 10px;
+}
+
+
+</style>
+<script>
+function validateLogin(event) {
+  event.preventDefault(); // Prevent form from submitting the default way
+
+  var username = document.getElementById('uname').value;
+  var password = document.getElementById('psw').value;
+
+  if (username === '' || password === '') {
+    alert('Please enter both username and password.');
+    return false;
+  }
+  
+  // Simulate successful login and redirect
+  window.location.href = 'dashboard.html'; // Redirect to the dashboard page
+  return true;
+}
+
+// Function to toggle password visibility
+function togglePasswordVisibility() {
+  var passwordInput = document.getElementById('psw');
+  var toggleCheckbox = document.getElementById('togglePassword');
+
+  if (toggleCheckbox.checked) {
+    passwordInput.type = 'text'; // Show password
+  } else {
+    passwordInput.type = 'password'; // Hide password
+  }
+}
+</script>
+</head>
+
+
+<body>
+
+<div class="header">
+  <div class="center">
+  <h1>Login to Student Mental Health</h1>
+</div>
+</div>
+
+<div class="center">
+  <form onsubmit="return validateLogin(event)">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" id="uname" name="uname" placeholder="Enter Username" style="padding:8px; width: 100%; box-sizing: border-box;"> <br><br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" id="psw" name="psw" placeholder="Enter Password" style="padding:8px; width: 100%; box-sizing: border-box;"> <br>
+    <input type="checkbox" id="togglePassword" onclick="togglePasswordVisibility()">
+    <label for="togglePassword" style="display:inline; margin-left: 5px;">Show Password</label><br><br>
+    <input type="submit" style="color:text rgb(44, 44, 133);" value="Login">
+    <input type="reset" value="Cancel">
+  </form>
+</div>
+
+<div class="navbar">
+  <a href="index.html" class="active" style="background-color:#f9f8fc">Back</a>
+</div>
+
+
+
+</body>
+</html>
